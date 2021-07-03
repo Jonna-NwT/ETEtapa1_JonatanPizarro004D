@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}"/>
+        <title>Caos News!</title>
+
+        <!--Conexion con css y bootstrap-->
+        <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet"> 
+        <link href="{% static 'css/styles.css' %}" type="text/css" rel="stylesheet"> 
+
+        <!--Scripts-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+        
+    </head>
+    <body class="body_register_colaboradores">
+        <section id="register">
+            <div class="form-cont container-fluid">
+              <div class="row color-row">
+                <div class="columna-foto2 col-lg-6"> 
+                </div>  
+                <div class="col-lg-6 d-flex flex-column">
+                  <div class="px-lg-5 py-lg-4 p-4 w-100 mt-4 align-self-center">  
+
+                    <a href="{% url 'index' %}"><button type="button" class="btn btn-secondary"><i class="fas fa-chevron-left"></i></button></a>
+
+                    <h1 class="font-weight-bold mb-3 mt-5 texto-form-regis">Registra  Colaborador</h1>
+                    <p class=" mb-5 texto-form-regis-white">Ingresa la siguiente información para registrar un colaborador.</p>
+                    <form method="POST" action="#" id="formulario" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.rutColaborador.label}}
+                            {{form_colaboradores.rutColaborador}}
+                        </div>
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.imagen.label}}
+                            {{form_colaboradores.imagen}}
+                        </div>
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.nombreCompleto.label}}
+                            {{form_colaboradores.nombreCompleto}}
+                        </div>
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.telefono.label}}
+                            {{form_colaboradores.telefono}}
+                        </div>
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.direccion.label}}
+                            {{form_colaboradores.direccion}} 
+                        </div>
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.email.label}}
+                            {{form_colaboradores.email}}  
+                        </div>
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.pais.label}}
+                            {{form_colaboradores.pais}}
+                        </div>
+                        <div class="form-group texto-form-regis">
+                            {{form_colaboradores.contraseña.label}}
+                            {{form_colaboradores.contraseña}}
+                        </div>
+                        <div class="form-group  pt-4 text-center">
+                            <input type="submit" class="btn btn-danger mr-5" id="enviar" value="Guardar">
+                            <input type="reset" class="btn btn-primary ml-5" id="limpiar" value="Limpiar">
+                        </div>
+                    </form>
+                  </div>  
+                </div>
+              </div>
+            </div>  
+          </section>   
+        <footer class="footer text-faded text-center py-5">
+            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2021</p></div>
+        </footer> 
+    </body>
+</html>
