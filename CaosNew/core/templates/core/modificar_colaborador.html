@@ -17,6 +17,71 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
         
+        <script>
+            $(function(){
+              $("#formulario").validate({
+                rules:{
+                  rut_colaborador:{
+                    required: true
+                  },
+                  imagen_:{
+                    required: true
+                  },
+                  nombre_completo: {
+                    required: true,
+                  },
+                  telefono_:{
+                    required: true,
+                  },
+                  direccion_:{
+                    required: true
+                  },
+                  email_: {
+                    required: true,
+                    email: true,
+                  },
+                  pais_: {
+                    required: true,
+                  },
+                  contraseña_: {
+                    required: true,
+                  },
+                },
+                messages:{
+                  rut_colaborador:{
+                    required: 'Ingrese Nombre de Usuario',
+                    maxlength:'Has Alcanzado el Limite de Caracteres'
+                  },
+                  imagen_:{
+                    required: 'Ingrese una Imagen'
+                  },
+                  nombre_completo:{
+                    required: 'Ingrese su Nombre',
+                    maxlength:'Has Alcanzado el Limite de Caracteres'
+                  },
+                  telefono_:{
+                    required: 'Ingrese su telefono',
+                  },
+                  direccion_:{
+                    required: 'Ingrese su Direccion',
+                    maxlength:'Has Alcanzado el Limite de Caracteres'
+                  },
+                  email_: {
+                    required:'Ingrese su Email',
+                    email: 'Formato de Correo no Válido'
+                  },
+                  pais_: {
+                    required:'Ingrese su Pais',
+                    maxlength:'Has Alcanzado el Limite de Caracteres'
+                  },
+                  contraseña_: {
+                    required:'Ingrese su Contraseña',
+                    maxlength:'Has Alcanzado el Limite de Caracteres'
+                  },
+                }
+              });       
+            });
+          </script>
     </head>
     <body class="body_modificar_colaboradores">
         <section id="register">
