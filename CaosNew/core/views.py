@@ -26,27 +26,6 @@ def verTodos(request):
     Colaboradores = Colaborador.objects.all()
     return render(request, 'core/vertodos.html', context={'colaboradores':Colaboradores})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def modificarColaborador(request, id):
     colaborador = Colaborador.objects.get(rutColaborador=id)
     datos = {
